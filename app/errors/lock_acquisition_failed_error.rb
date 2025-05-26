@@ -1,0 +1,1 @@
+class LockAcquisitionFailedError < StandardError; end
