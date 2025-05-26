@@ -16,11 +16,10 @@ class DistributedLockService
     RETRY_COUNT.times do
       if acquire_lock(lock_value)
         begin
-          yield
+          return yield
         ensure
           release_lock_if_owner(lock_value)
         end
-        return
       else
         sleep(RETRY_DELAY / 1000.0)
       end
