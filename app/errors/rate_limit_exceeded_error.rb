@@ -1,0 +1,1 @@
+class RateLimitExceededError < StandardError; end
